@@ -85,6 +85,17 @@ defmodule Provex do
     :QED
   end
 
+  # TODO: Sintetizar um programa a partir da prova.
+  #
+  # Exemplo
+  # a -> b -> a & b
+  #
+  # Ou mesmo:
+  # a -> b -> {a, b}
+  #
+  # def proof(a, b) do
+  #   {a, b}
+  # end
   def program_from_steps([step | steps]) do
     case step do
       :elim_and ->
