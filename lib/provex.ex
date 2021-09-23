@@ -66,17 +66,6 @@ defmodule Provex do
     end)
   end
 
-  def proof1 do
-    new()
-    |> pose({:->, :a, {:->, :b, {:and, :a, :b}}})
-    |> elim_implication()
-    |> elim_implication()
-    |> elim_and()
-    |> exact()
-    |> exact()
-    |> qed?()
-  end
-
   def program_from_proof(%__MODULE__{steps: steps}) do
     program_from_steps(steps)
   end
